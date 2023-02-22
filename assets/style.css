@@ -1,0 +1,151 @@
+:root {
+  /* --brand-purple: #770095; */
+  /* --brand-purple: #8e00b9; */
+  /* --brand-purple: #9900c0; */
+  /* --brand-purple: #8a288d; */
+  /* --brand-purple: #9800c8f0; */
+  /* --brand-purple: #8e00bab0; */
+  --brand-purple: #6d008f;
+  --teal-1: #229394;
+  --teal-2: #00bca5;
+  --bg-1: #2B2D32;
+  --bg-2: #1E1D37;
+  --on-dark-1: #aeaeae;
+  --on-light-color: #1D1E21;
+
+
+  --astronaut: #2d2a7b
+}
+
+body {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 400;
+}
+
+a {
+  color: #222222;
+  box-shadow: var(--brand-purple) 0px -2px 0px inset;
+  text-decoration: none;
+}
+
+.header_top,
+.nav,
+nav {
+  display: flex;
+}
+
+nav a {
+  cursor: pointer;
+  box-shadow: none;
+  font-weight: 800;
+}
+
+.header_top {
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.header_top__fraction {
+  display: flex;
+  flex-basis: 33%;
+}
+
+.header_top__logo {
+  justify-content: center;
+}
+
+.header_top_burger {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.header_top_burger::before {
+  font-size: 25px;
+  color: var(--bg-2);
+}
+
+.header_nav,
+.dropdown_content {
+  justify-content: center;
+  background-color: var(--bg-2);
+}
+
+.header_nav li {
+  cursor: pointer;
+  position: relative;
+
+  /* border: 1px solid #00a2ffb4; */
+}
+
+.header_nav a {
+  display: block;
+  padding: 1.5rem;
+  height: 100%;
+  color: var(--on-dark-1);
+
+  /* border: 1px solid #00a2ffb4; */
+}
+
+.header_nav a:hover,
+.header_nav a:focus, .active, .dropdown_content {
+  background-color: var(--brand-purple);
+}
+
+.active a:not(.dropdown_content a) {
+  /* box-shadow: 0px -1px 0px 0px rgba(30, 29, 55) inset; */
+}
+
+.dropdown_content {
+  position: relative;
+}
+
+.dropdown_content a:hover {
+  background-color: var(--bg-2);
+  box-shadow: -1px -1px 1px -1px var(--brand-purple) inset;
+}
+
+.top_dropdown_elem_border:before {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  right: 0;
+  height: 1px;
+  width: 50%;
+  box-shadow: 0px -1px 0px 0px var(--brand-purple) inset;
+  top: -1px;
+  display: none;
+}
+
+.top_dropdown_elem_border::after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  height: 1px;
+  width: 50%;
+  box-shadow: 0px -1px 0px 0px var(--bg-2) inset;
+  top: -1px;
+  display: block;
+}
+
+.top_dropdown_elem_border:hover::before {
+  display: block;
+}
+.top_dropdown_elem_border:hover::after {
+  display: none;
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  width: 200%;
+}
+
+.dropdown_content a {
+  padding: 1rem;
+}
+
+.show {
+  display: block;
+}
